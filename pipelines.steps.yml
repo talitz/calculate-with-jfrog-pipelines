@@ -6,14 +6,13 @@ pipelines:
         configuration:
           integrations:
             - name: pipelines_creds_for_calculate
+            - name: tals_artifactory_integration
           sourceLocation: .
           mvnCommand: clean install -s settings.xml -Dusername=int_pipelines_creds_for_calculate_username -Dpassword=int_pipelines_creds_for_calculate_password
           configFileLocation: .
           configFileName: config.file.yml
           inputResources:
             - name: calculate_repository_resource
-          integrations:
-            - name: tals_artifactory_integration
           runtime:
             type: image
             image:
