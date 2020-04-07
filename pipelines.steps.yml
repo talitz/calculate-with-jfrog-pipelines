@@ -8,7 +8,7 @@ pipelines:
             - name: pipelines_creds_for_calculate
             - name: tals_artifactory_integration
           sourceLocation: .
-          mvnCommand: clean install -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
+          mvnCommand: clean deploy -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
           configFileLocation: .
           configFileName: config.file.yml
           inputResources:
@@ -25,6 +25,7 @@ pipelines:
             - javac -version
             - mvn --version
 
+
       - name: publish_app_build
         type: PublishBuildInfo
         configuration:
@@ -32,3 +33,23 @@ pipelines:
             - name: build_app
           outputResources:
             - name: appl_build_info               
+
+
+      - name: xray_scan
+        type: XrayScan
+        configuration:
+          inputResources:
+            - name: appl_build_info
+              trigger: false
+
+
+     - name: promote_app_build
+        type: PromoteBuild
+        configuration:
+          targetRepository: calculate_demo
+          integrations:
+            - name: tals_artifactory_integration
+          inputResources:
+            - name: appl_build_info
+          outputResources:
+            - name: appl_promoted_build_info              
