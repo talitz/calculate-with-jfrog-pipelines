@@ -4,8 +4,10 @@ pipelines:
       - name: build_app
         type: MvnBuild
         configuration:
+          integrations:
+            - name: myCredentials
           sourceLocation: .
-          mvnCommand: clean install -s settings.xml
+          mvnCommand: clean install -s settings.xml -Dusername=int_myCredentials_username -Dpassword=int_myCredentials_password
           configFileLocation: .
           configFileName: config.file.yml
           inputResources:
