@@ -25,7 +25,6 @@ pipelines:
             - javac -version
             - mvn --version
 
-
       - name: publish_app_build
         type: PublishBuildInfo
         configuration:
@@ -34,18 +33,20 @@ pipelines:
           outputResources:
             - name: appl_build_info               
 
-
       - name: xray_scan
         type: XrayScan
         configuration:
+          inputSteps:
+            - name: publish_app_build
           inputResources:
             - name: appl_build_info
               trigger: false
 
-
      - name: promote_app_build
         type: PromoteBuild
         configuration:
+          inputSteps:
+            - name: xray_scan
           targetRepository: calculate_demo
           integrations:
             - name: tals_artifactory_integration
