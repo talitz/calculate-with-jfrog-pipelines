@@ -42,7 +42,7 @@ pipelines:
             - name: appl_build_info
               trigger: false
 
-     - name: promote_app_build
+      - name: promote_app_build
         type: PromoteBuild
         configuration:
           inputSteps:
