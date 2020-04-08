@@ -9,7 +9,7 @@ pipelines:
             - name: tals_artifactory_integration
           sourceLocation: .
           autoPublishBuildInfo: false
-          mvnCommand: clean install -s settings.xml -Dartifactory.publish.artifacts=true -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
+          mvnCommand: clean install -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
           configFileLocation: .
           configFileName: config.file.yml
           inputResources:
