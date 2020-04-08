@@ -48,7 +48,7 @@ pipelines:
         configuration:
           inputSteps:
             - name: xray_scan
-          targetRepository: calculate_demo
+          targetRepository: libs-release-prod
           integrations:
             - name: tals_artifactory_integration
           inputResources:
