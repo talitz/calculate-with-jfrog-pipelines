@@ -21,13 +21,13 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>zteam-mvn</name>
+          <name>libs-release</name>
           <url>http://artifactory-eu.soleng-emea-staging.jfrog.team:80/artifactory/libs-release;artifact.maturity=dev</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
-          <name>zteam-mvn</name>
+          <name>libs-release</name>
           <url>http://artifactory-eu.soleng-emea-staging.jfrog.team:80/artifactory/libs-release;artifact.maturity=dev</url>
         </repository>
       </repositories>
@@ -37,13 +37,13 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>zteam-mvn</name>
+          <name>libs-release</name>
           <url>http://artifactory-eu.soleng-emea-staging.jfrog.team:80/artifactory/libs-release;artifact.maturity=dev</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
-          <name>zteam-mvn</name>
+          <name>libs-release</name>
           <url>http://artifactory-eu.soleng-emea-staging.jfrog.team:80/artifactory/libs-release;artifact.maturity=dev</url>
         </pluginRepository>
       </pluginRepositories>
