@@ -4,6 +4,8 @@ pipelines:
       - name: build_app
         type: MvnBuild
         configuration:
+          environmentVariables: 
+            version: ${run_number}
           integrations:
             - name: pipelines_creds_for_calculate
             - name: tals_artifactory_integration
@@ -23,7 +25,7 @@ pipelines:
                   - "11"
         execution:
           onStart:
-            - jfrog rt mvn versions:set -DnewVersion=$pipeline_name-$run_number -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
+            - jfrog rt mvn versions:set -DnewVersion=$version -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
             
       - name: publish_app_build
         type: PublishBuildInfo
