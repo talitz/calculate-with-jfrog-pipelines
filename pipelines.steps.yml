@@ -1,9 +1,5 @@
 pipelines:
   - name: calculate_ci_job
-    configuration:
-    environmentVariables:
-      readOnly:
-        version: 1.0.$run_number
     steps: 
       - name: build_app
         type: MvnBuild
@@ -13,7 +9,7 @@ pipelines:
             - name: tals_artifactory_integration
           sourceLocation: .
           autoPublishBuildInfo: false
-          mvnCommand: clean install -s settings.xml -DnewVersion=${version} -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
+          mvnCommand: clean install -s settings.xml -DnewVersion=1.0.$run_number -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
           configFileLocation: .
           configFileName: config.file.yml
           inputResources:
@@ -66,7 +62,7 @@ pipelines:
           inputSteps:
             - name: promote_app_build
           releaseBundleName: calculate-application-rb
-          releaseBundleVersion: '${version}'
+          releaseBundleVersion: '1.0.$run_number'
           sign: true
           inputResources:
             - name: appl_promoted_build_info
