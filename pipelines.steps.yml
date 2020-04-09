@@ -23,7 +23,7 @@ pipelines:
                   - "11"
         execution:
           onStart:
-            - mvn versions:set -DnewVersion=${pipeline_name}-1.0.${run_number}
+            - mvn versions:set -DnewVersion=$pipeline_name-1.0.$run_number
 
       - name: publish_app_build
         type: PublishBuildInfo
@@ -61,7 +61,7 @@ pipelines:
           inputSteps:
             - name: promote_app_build
           releaseBundleName: calculate-application-rb
-          releaseBundleVersion: '${pipeline_name}-1.0.${run_number}'
+          releaseBundleVersion: $pipeline_name-1.0.$run_number
           sign: true
           inputResources:
             - name: appl_promoted_build_info
