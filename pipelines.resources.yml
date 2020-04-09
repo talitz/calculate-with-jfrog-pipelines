@@ -28,7 +28,7 @@ resources:
   - name: release_bundle_info
     type: ReleaseBundle
     configuration:
-      sourceDistribution: libs-release-prod
+      sourceDistribution: distribution
       name: release_bundle_info
       version: latest
       isSigned: true
