@@ -30,7 +30,7 @@ resources:
     configuration:
       sourceDistribution: distribution
       name: release_bundle_info
-      version: latest
+      version: 1
       isSigned: true
       
   - name: distribute_calculate_rule
