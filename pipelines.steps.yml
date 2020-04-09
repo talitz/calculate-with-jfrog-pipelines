@@ -9,7 +9,7 @@ pipelines:
             - name: tals_artifactory_integration
           sourceLocation: .
           autoPublishBuildInfo: false
-          mvnCommand: clean install -s settings.xml -DnewVersion=$pipeline_name-1.0.$run_number -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
+          mvnCommand: clean install -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
           configFileLocation: .
           configFileName: config.file.yml
           inputResources:
@@ -23,8 +23,7 @@ pipelines:
                   - "11"
         execution:
           onStart:
-            - javac -version
-            - mvn --version
+            - mvn versions:set -DnewVersion=$pipeline_name-1.0.$run_number 
 
       - name: publish_app_build
         type: PublishBuildInfo
