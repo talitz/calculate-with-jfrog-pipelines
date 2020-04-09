@@ -14,7 +14,6 @@ pipelines:
           configFileName: config.file.yml
           inputResources:
             - name: calculate_repository_resource
-            trigger: true
           runtime:
             type: image
             image:
