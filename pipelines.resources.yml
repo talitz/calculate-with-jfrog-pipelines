@@ -33,7 +33,7 @@ resources:
       version: latest
       isSigned: true
       
-  - name: distribute-calculate-rule
+  - name: distribute_calculate_rule
     type: DistributionRule
     configuration:
       sourceDistribution: distribution
