@@ -75,7 +75,7 @@ pipelines:
           inputSteps:
             - name: create_release_bundle
           inputResources:
-            - name: calculate-application-rb
+            - name: release_bundle_info
               trigger: false   
             - name: distribute-calculate-application-rule
               trigger: false   
