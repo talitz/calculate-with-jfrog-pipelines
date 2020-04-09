@@ -4,5 +4,5 @@ resolver:
   serverId: tals_artifactory_integration
 deployer:  
   serverId: tals_artifactory_integration 
-  snapshotRepo: maven-local
-  releaseRepo: maven-local
+  snapshotRepo: libs-release
+  releaseRepo: libs-release
