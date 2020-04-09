@@ -14,7 +14,7 @@ resources:
     configuration:
       sourceArtifactory: tals_artifactory_integration
       buildName: calculate_ci_job
-      buildNumber: 1
+     # buildNumber: 1
 
   # Build info for the promoted application
   - name: appl_promoted_build_info
@@ -22,7 +22,7 @@ resources:
     configuration:
       sourceArtifactory: tals_artifactory_integration
       buildName: calculate_ci_job
-      buildNumber: 1
+      #buildNumber: 1
       
   # Release bundle info
   - name: release_bundle_info
