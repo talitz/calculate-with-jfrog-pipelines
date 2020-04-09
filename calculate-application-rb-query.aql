@@ -1,0 +1,22 @@
+items.find({
+	"$and": [
+		{
+			"$or": [
+				{
+					"repo": {
+						"$eq": "libs-release-prod"
+					}
+				}
+			]
+		},
+		{
+			"$or": [
+				{
+					"name": {
+						"$match": "*.jar"
+					}
+				}
+			]
+		}
+	]
+}).include("sha256","updated","modified_by","created","id","original_md5","depth","actual_sha1","property.value","modified","property.key","actual_md5","created_by","type","name","repo","original_sha1","size","path")
