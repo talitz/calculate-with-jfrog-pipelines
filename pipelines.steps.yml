@@ -74,6 +74,6 @@ pipelines:
             - name: create_release_bundle
           inputResources:
             - name: release_bundle_info
-              trigger: true   
+              trigger: true
             - name: distribute_calculate_rule
               trigger: true
