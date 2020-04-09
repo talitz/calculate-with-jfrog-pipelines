@@ -66,7 +66,6 @@ pipelines:
           dryRun: false
           sign: true
           inputResources:
-            - name: appl_build_info
-            - name: calculate-application-rb-query.aql
+            - name: appl_promoted_build_info
           outputResources:
             - name: release_bundle_info
