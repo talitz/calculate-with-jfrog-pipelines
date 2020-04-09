@@ -27,7 +27,7 @@ pipelines:
           onStart:
             - cd $res_calculate_repository_resource_resourcePath
             - echo $version
-            - sed -i -e 's/4.2/${version}/g' pom.xml
+            - sed -i -e 's//4.2//${version}//g' pom.xml
             - cat pom.xml
             
       - name: publish_app_build
