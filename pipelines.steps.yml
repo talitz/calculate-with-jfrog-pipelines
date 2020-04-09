@@ -70,4 +70,4 @@ pipelines:
           inputSteps:
             - name: promote_app_build
           outputResources:
-            - name: appl_release_bundle_resource
+            - name: release_bundle_info
