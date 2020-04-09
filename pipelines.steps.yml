@@ -77,5 +77,5 @@ pipelines:
           inputResources:
             - name: release_bundle_info
               trigger: false   
-            - name: distribute-calculate-rule
+            - name: distribute_calculate_rule
               trigger: false   
