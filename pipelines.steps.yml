@@ -25,7 +25,7 @@ pipelines:
                   - "11"
         execution:
           onStart:
-            - ls -la
+            - cd $res_calculate_repository_resource_resourcePath
             - mvn versions:set -DnewVersion=$version -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
             
       - name: publish_app_build
