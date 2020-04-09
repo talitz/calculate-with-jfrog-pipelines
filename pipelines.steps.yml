@@ -26,7 +26,7 @@ pipelines:
         execution:
           onStart:
             - echo $version
-            - jfrog rt mvn versions:set -DnewVersion=$version -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
+            - mvn versions:set -DnewVersion=$version -s settings.xml -Dusername=${int_pipelines_creds_for_calculate_username} -Dpassword=${int_pipelines_creds_for_calculate_password}
             
       - name: publish_app_build
         type: PublishBuildInfo
