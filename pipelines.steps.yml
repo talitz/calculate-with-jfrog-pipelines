@@ -1,7 +1,5 @@
 pipelines:
   - name: calculate_ci_job
-    environmentVariables:
-      version: 1.0.10
     steps: 
       - name: build_app
         type: MvnBuild
@@ -25,7 +23,7 @@ pipelines:
                   - "11"
         execution:
           onStart:
-            - mvn versions:set -DnewVersion=$version
+            - mvn versions:set -DnewVersion="1.0.10"
 
       - name: publish_app_build
         type: PublishBuildInfo
@@ -63,7 +61,7 @@ pipelines:
           inputSteps:
             - name: promote_app_build
           releaseBundleName: calculate-application-rb
-          releaseBundleVersion: $version
+          releaseBundleVersion: "1.0.10"
           sign: true
           inputResources:
             - name: appl_promoted_build_info
