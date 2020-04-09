@@ -63,9 +63,19 @@ pipelines:
             - name: promote_app_build
           releaseBundleName: calculate-application-rb
           releaseBundleVersion: "1.0"
-          dryRun: false
           sign: true
           inputResources:
             - name: appl_promoted_build_info
           outputResources:
             - name: release_bundle_info
+
+      - name: distribute_release_bundle
+        type: DistributeReleaseBundle
+        configuration:
+          inputSteps:
+            - name: create_release_bundle
+          inputResources:
+            - name: calculate-application-rb
+              trigger: false   
+            - name: distribute-calculate-application-rule
+              trigger: false   
