@@ -40,7 +40,6 @@ pipelines:
             - name: publish_app_build
           inputResources:
             - name: appl_build_info
-              trigger: true
 
       - name: promote_app_build
         type: PromoteBuild
@@ -52,7 +51,6 @@ pipelines:
             - name: tals_artifactory_integration
           inputResources:
             - name: appl_build_info
-            trigger: true
           outputResources:
             - name: appl_promoted_build_info    
             
@@ -66,7 +64,6 @@ pipelines:
           sign: true
           inputResources:
             - name: appl_promoted_build_info
-            trigger: true
           outputResources:
             - name: release_bundle_info
 
@@ -77,6 +74,4 @@ pipelines:
             - name: create_release_bundle
           inputResources:
             - name: release_bundle_info
-              trigger: true
             - name: distribute_calculate_rule
-              trigger: true
