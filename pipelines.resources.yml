@@ -33,3 +33,12 @@ resources:
       version: latest
       isSigned: true
       
+  - name: distribute-calculate-application-rule
+    type: DistributionRule
+    configuration:
+      sourceDistribution: distribution
+      serviceName: edge_us
+      siteName: "*"
+      cityName: "*"
+      countryCodes:
+        - "*"
