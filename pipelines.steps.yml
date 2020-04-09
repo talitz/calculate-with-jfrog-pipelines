@@ -62,7 +62,7 @@ pipelines:
           inputSteps:
             - name: promote_app_build
           releaseBundleName: calculate-application-rb
-          releaseBundleVersion: 1.0
+          releaseBundleVersion: "1.0"
           dryRun: false
           sign: true
           inputResources:
