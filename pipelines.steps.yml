@@ -54,4 +54,20 @@ pipelines:
           inputResources:
             - name: appl_build_info
           outputResources:
-            - name: appl_promoted_build_info              
+            - name: appl_promoted_build_info    
+            
+            
+      - name: create_release_bundle
+        type: CreateReleaseBundle
+        configuration:
+          releaseBundleName: calculate-application-rb
+          releaseBundleVersion: 1.0
+          dryRun: false
+          sign: true
+          inputResources:
+            - name: appl_build_info
+            - name: calculate-application-rb-query.aql
+          inputSteps:
+            - name: promote_app_build
+          outputResources:
+            - name: appl_release_bundle_resource
