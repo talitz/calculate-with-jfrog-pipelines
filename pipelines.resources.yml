@@ -1,5 +1,4 @@
 resources:
-  # Repository for deployment
   - name: calculate_repository_resource
     type: GitRepo
     configuration:
@@ -8,7 +7,6 @@ resources:
       branches: 
         include: master
  
-  # Build info for the application
   - name: appl_build_info
     type: BuildInfo
     configuration:
@@ -16,7 +14,6 @@ resources:
       buildName: calculate_ci_job
       buildNumber: 1
 
-  # Build info for the promoted application
   - name: appl_promoted_build_info
     type: BuildInfo
     configuration:
@@ -24,12 +21,11 @@ resources:
       buildName: calculate_ci_job
       buildNumber: 1
       
-  # Release bundle info
-  - name: release_bundle_info
+  - name: release_bundle
     type: ReleaseBundle
     configuration:
       sourceDistribution: distribution
-      name: release_bundle_info
+      name: release_bundle
       version: "1"
       isSigned: true
       

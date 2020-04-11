@@ -68,15 +68,7 @@ pipelines:
           inputResources:
             - name: appl_promoted_build_info
           outputResources:
-            - name: release_bundle_info
-
-      - name: xray_scan_rb
-        type: XrayScan
-        configuration:
-          inputSteps:
-            - name: create_release_bundle
-          inputResources:
-            - name: release_bundle_info
+            - name: release_bundle
             
       - name: distribute_release_bundle
         type: DistributeReleaseBundle
@@ -85,5 +77,5 @@ pipelines:
           inputSteps:
             - name: xray_scan_rb
           inputResources:
-            - name: release_bundle_info
+            - name: release_bundle
             - name: distribute_calculate_rule
