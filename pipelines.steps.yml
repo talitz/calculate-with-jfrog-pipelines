@@ -60,6 +60,7 @@ pipelines:
             version: ${run_number}        
           inputSteps:
             - name: promote_app_build
+          dryRun: false
           releaseBundleName: calculate-application-rb
           releaseBundleVersion: '1.0.${version}'
           sign: true
@@ -71,6 +72,7 @@ pipelines:
       - name: distribute_release_bundle
         type: DistributeReleaseBundle
         configuration:
+          dryRun: false
           inputSteps:
             - name: create_release_bundle
           inputResources:
