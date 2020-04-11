@@ -70,12 +70,20 @@ pipelines:
           outputResources:
             - name: release_bundle_info
 
+      - name: xray_scan_rb
+        type: XrayScan
+        configuration:
+          inputSteps:
+            - name: create_release_bundle
+          inputResources:
+            - name: release_bundle_info
+            
       - name: distribute_release_bundle
         type: DistributeReleaseBundle
         configuration:
           dryRun: false
           inputSteps:
-            - name: create_release_bundle
+            - name: xray_scan_rb
           inputResources:
             - name: release_bundle_info
             - name: distribute_calculate_rule
