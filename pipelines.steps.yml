@@ -75,7 +75,7 @@ pipelines:
         configuration:
           dryRun: false
           inputSteps:
-            - name: xray_scan_rb
+            - name: create_release_bundle
           inputResources:
             - name: release_bundle
             - name: distribute_calculate_rule
