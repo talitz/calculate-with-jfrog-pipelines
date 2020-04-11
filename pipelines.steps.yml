@@ -56,10 +56,12 @@ pipelines:
       - name: create_release_bundle
         type: CreateReleaseBundle
         configuration:
+          environmentVariables: 
+            version: ${run_number}        
           inputSteps:
             - name: promote_app_build
           releaseBundleName: calculate-application-rb
-          releaseBundleVersion: ${pipeline_name}-${run_number}
+          releaseBundleVersion: '1.0.${version}'
           sign: true
           inputResources:
             - name: appl_promoted_build_info
