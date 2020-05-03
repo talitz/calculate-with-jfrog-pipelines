@@ -24,7 +24,7 @@ resources:
   - name: release_bundle
     type: ReleaseBundle
     configuration:
-      sourceDistribution: distribution
+      sourceDistribution: tals_distribution
       name: release_bundle
       version: "1"
       isSigned: true
@@ -32,7 +32,7 @@ resources:
   - name: distribute_calculate_rule
     type: DistributionRule
     configuration:
-      sourceDistribution: distribution
+      sourceDistribution: tals_distribution
       serviceName: edge_us
       siteName: "*"
       cityName: "*"
